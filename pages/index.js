@@ -1,9 +1,10 @@
-import NavBar from "@/components/nav";
+import PersonaFinder from "@/components/PersonaFinder";
 
-export default function HomePage() {
+export default function HomePage({ people }) {
   return (
     <div>
-      <h1>Hello from Next.js</h1>
+      <h1>Personalities</h1>
+      <PersonaFinder people={people} />
     </div>
   );
 }

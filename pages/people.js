@@ -1,10 +1,10 @@
 import PeopleList from "@/components/people";
 
-export default function PeoplePage() {
+export default function PeoplePage({ people }) {
   return (
     <>
       <h1>People</h1>
-      <PeopleList />
+      <PeopleList people={people} />
     </>
   );
 }

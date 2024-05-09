@@ -10,12 +10,13 @@ const SwipeableContainer = styled.div`
 `;
 
 const TypeOfMusicBox = styled.li`
-  background-color: hotpink;
+  background-color: lightgrey;
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 30px;
   border: solid black 5px;
+  border-radius: 10px;
   font-size: 50px;
   width: 50vw;
   cursor: pointer;
@@ -39,8 +40,8 @@ const RightArrow = styled(ArrowIcon)`
 
 const GenreInfoBox = styled.div`
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 70%;
+  left: 30%;
   transform: translate(-50%, -50%);
   background-color: lightblue;
   padding: 20px;
@@ -77,6 +78,7 @@ export default function PersonaFinder({ people }) {
 
   return (
     <>
+      <p>Click on the music type to read more</p>
       <SwipeableContainer {...handlers} onClick={closeGenreInfo}>
         {currentIndex > 0 && (
           <LeftArrow onClick={() => setCurrentIndex(currentIndex - 1)}>
@@ -99,9 +101,9 @@ export default function PersonaFinder({ people }) {
         )}
         {showGenreInfo && (
           <GenreInfoBox>
-            <h2>{people[currentIndex].music}</h2>
-            <p>{people[currentIndex].name}</p>
-            <p>{people[currentIndex].city}</p>
+            <h2>{people[currentIndex].name}</h2>
+            <p>{people[currentIndex].age}</p>
+            <p>{people[currentIndex].address.city}</p>
           </GenreInfoBox>
         )}
       </SwipeableContainer>
